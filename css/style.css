@@ -1,5 +1,6 @@
 body {
   position: relative;
+  overflow: hidden;
   margin: 0;
   top: 200px;
 }
