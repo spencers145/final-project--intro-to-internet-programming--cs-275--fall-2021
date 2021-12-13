@@ -13,6 +13,20 @@ body {
   top: 200px;
 }
 
+h1 {
+  line-height: 1.2;
+}
+
+h2 {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+p {
+  margin: 0;
+  text-align: left;
+}
+
 #slides-container {
   width: fit-content;
   display: flex;
@@ -22,4 +36,17 @@ body {
 
 .slide {
   position: static;
+  display: flex;
+  width: var(--slide-width);
+  height: 280px;
+}
+
+.slide-text-container {
+  margin-right: 64px;
+}
+
+img {
+  width: 210px;
+  height: 250px;
+  padding: 15px 18px;
 }
