@@ -41,20 +41,23 @@ function moveSlideshow(direction) {
     switch (direction) {
         case `left`:
             if (CURR_SLIDE_INDEX !== 0) {
-                SLIDE_CONTAINER.style.transform = `translate(-${SLIDE_WIDTH * (CURR_SLIDE_INDEX - 1)}px)`;
+                SLIDE_CONTAINER.style.transform =
+                    `translate(-${SLIDE_WIDTH * (CURR_SLIDE_INDEX - 1)}px)`;
                 SLIDES[CURR_SLIDE_INDEX].classList.remove(`selected`);
                 SLIDES[CURR_SLIDE_INDEX - 1].classList.add(`selected`);
             }
             break;
         case `right`:
             if (CURR_SLIDE_INDEX !== SLIDES.length - 1) {
-                SLIDE_CONTAINER.style.transform = `translate(-${SLIDE_WIDTH * (CURR_SLIDE_INDEX + 1)}px)`;
+                SLIDE_CONTAINER.style.transform =
+                    `translate(-${SLIDE_WIDTH * (CURR_SLIDE_INDEX + 1)}px)`;
                 SLIDES[CURR_SLIDE_INDEX].classList.remove(`selected`);
                 SLIDES[CURR_SLIDE_INDEX + 1].classList.add(`selected`);
             }
             break;
         default:
-            throw new Error(`Tried to move the slideshow, but no direction was specified.`);
+            throw new Error(`Tried to move the slideshow,
+                but no direction was specified.`);
     }
 
     updateArrows();
