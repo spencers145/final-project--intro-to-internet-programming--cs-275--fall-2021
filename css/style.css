@@ -36,6 +36,7 @@ p {
   display: flex;
   position: relative;
   left: var(--slide-container-offset-constant);
+  transition-duration: .5s;
 }
 
 .slide {
