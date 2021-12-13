@@ -1,7 +1,21 @@
+:root {
+  --slide-width: 600px;
+  --slide-border-width: 40px;
+  --overall-slide-width: calc(var(--slide-width) + 2 * var(--slide-border-width));
+  --slide-container-offset-constant: calc(50vw - var(--overall-slide-width) / 2);
+}
+
 body {
   position: relative;
   overflow: hidden;
   text-align: center;
   margin: 0;
   top: 200px;
+}
+
+#slides-container {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  left: var(--slide-container-offset-constant);
 }
