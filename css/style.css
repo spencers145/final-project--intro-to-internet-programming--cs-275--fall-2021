@@ -55,6 +55,26 @@ img {
   padding: 15px 18px;
 }
 
+img.arrow {
+  position: absolute;
+  z-index: 5;
+  width: 32px;
+  bottom: 102px;
+  height: auto;
+  background-color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#arrow-left {
+  left: var(--slide-container-offset-constant);
+}
+
+#arrow-right {
+  right: var(--slide-container-offset-constant);
+}
+
 .hider {
   position: fixed;
   z-index: 10;
