@@ -44,7 +44,14 @@ p {
   position: static;
   display: flex;
   width: var(--slide-width);
+  background-color: #eee;
   height: 280px;
+  border-left: var(--slide-border-width);
+  border-right: var(--slide-border-width);
+  border-top: 0;
+  border-bottom: 0;
+  border-style: solid;
+  border-color: #f9f9f9;
 }
 
 .slide-text-container {
