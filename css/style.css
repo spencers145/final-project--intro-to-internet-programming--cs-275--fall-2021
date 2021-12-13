@@ -67,6 +67,10 @@ img.arrow {
   user-select: none;
 }
 
+.hidden {
+  display: none;
+}
+
 #arrow-left {
   left: var(--slide-container-offset-constant);
 }

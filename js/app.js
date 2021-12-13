@@ -17,6 +17,20 @@ function getSlidesIndex() {
     return slideIndex;
 }
 
+function updateArrows() {
+    const SLIDES = constructSlideArray();
+    const CURR_SLIDE_INDEX = getSlidesIndex();
+
+    document.getElementById("arrow-left").classList.remove("hidden");
+    document.getElementById("arrow-right").classList.remove("hidden");
+
+    if (CURR_SLIDE_INDEX === SLIDES.length - 1) {
+        document.getElementById("arrow-right").classList.add("hidden");
+    } else if (CURR_SLIDE_INDEX === 0) {
+        document.getElementById("arrow-left").classList.add("hidden");
+    }
+}
+
 function moveSlideshow(direction) {
     const SLIDES = constructSlideArray();
     const CURR_SLIDE_INDEX = getSlidesIndex();
@@ -42,6 +56,8 @@ function moveSlideshow(direction) {
         default:
             throw new Error("Tried to move the slideshow, but no direction was specified.");
     }
+
+    updateArrows();
 }
 
 document.addEventListener(`keydown`, (event) => {
@@ -55,3 +71,12 @@ document.addEventListener(`keydown`, (event) => {
         default:
     }
 });
+
+window.onload = () => {
+    document.getElementById("arrow-left").addEventListener("click", () => {
+        moveSlideshow("left");
+    });
+    document.getElementById("arrow-right").addEventListener("click", () => {
+        moveSlideshow("right");
+    });
+};
