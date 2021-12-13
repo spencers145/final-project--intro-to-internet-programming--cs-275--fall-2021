@@ -15,16 +15,19 @@ body {
 
 h1 {
   line-height: 1.2;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 h2 {
   margin-bottom: 0;
   text-align: left;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 p {
   margin: 0;
   text-align: left;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #slides-container {
