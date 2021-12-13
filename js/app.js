@@ -21,13 +21,13 @@ function updateArrows() {
     const SLIDES = constructSlideArray();
     const CURR_SLIDE_INDEX = getSlidesIndex();
 
-    document.getElementById("arrow-left").classList.remove("hidden");
-    document.getElementById("arrow-right").classList.remove("hidden");
+    document.getElementById(`arrow-left`).classList.remove(`hidden`);
+    document.getElementById(`arrow-right`).classList.remove(`hidden`);
 
     if (CURR_SLIDE_INDEX === SLIDES.length - 1) {
-        document.getElementById("arrow-right").classList.add("hidden");
+        document.getElementById(`arrow-right`).classList.add(`hidden`);
     } else if (CURR_SLIDE_INDEX === 0) {
-        document.getElementById("arrow-left").classList.add("hidden");
+        document.getElementById(`arrow-left`).classList.add(`hidden`);
     }
 }
 
@@ -39,14 +39,14 @@ function moveSlideshow(direction) {
     const SLIDE_CONTAINER = document.getElementById(`slides-container`);
 
     switch (direction) {
-        case "left":
+        case `left`:
             if (CURR_SLIDE_INDEX !== 0) {
                 SLIDE_CONTAINER.style.transform = `translate(-${SLIDE_WIDTH * (CURR_SLIDE_INDEX - 1)}px)`;
                 SLIDES[CURR_SLIDE_INDEX].classList.remove(`selected`);
                 SLIDES[CURR_SLIDE_INDEX - 1].classList.add(`selected`);
             }
             break;
-        case "right":
+        case `right`:
             if (CURR_SLIDE_INDEX !== SLIDES.length - 1) {
                 SLIDE_CONTAINER.style.transform = `translate(-${SLIDE_WIDTH * (CURR_SLIDE_INDEX + 1)}px)`;
                 SLIDES[CURR_SLIDE_INDEX].classList.remove(`selected`);
@@ -54,7 +54,7 @@ function moveSlideshow(direction) {
             }
             break;
         default:
-            throw new Error("Tried to move the slideshow, but no direction was specified.");
+            throw new Error(`Tried to move the slideshow, but no direction was specified.`);
     }
 
     updateArrows();
@@ -63,20 +63,20 @@ function moveSlideshow(direction) {
 document.addEventListener(`keydown`, (event) => {
     switch (event.code) {
         case `ArrowLeft`:
-            moveSlideshow("left");
+            moveSlideshow(`left`);
             break;
         case `ArrowRight`:
-            moveSlideshow("right");
+            moveSlideshow(`right`);
             break;
         default:
     }
 });
 
 window.onload = () => {
-    document.getElementById("arrow-left").addEventListener("click", () => {
-        moveSlideshow("left");
+    document.getElementById(`arrow-left`).addEventListener(`click`, () => {
+        moveSlideshow(`left`);
     });
-    document.getElementById("arrow-right").addEventListener("click", () => {
-        moveSlideshow("right");
+    document.getElementById(`arrow-right`).addEventListener(`click`, () => {
+        moveSlideshow(`right`);
     });
 };
