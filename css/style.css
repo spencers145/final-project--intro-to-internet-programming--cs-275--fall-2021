@@ -19,3 +19,7 @@ body {
   position: relative;
   left: var(--slide-container-offset-constant);
 }
+
+.slide {
+  position: static;
+}
